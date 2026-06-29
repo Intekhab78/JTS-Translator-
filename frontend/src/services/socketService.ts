@@ -1,9 +1,15 @@
-import { io } from 'socket.io-client';
-
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+import { io, Socket } from 'socket.io-client';
+import { getBaseUrl } from '../config/api';
 
 class SocketService {
-    socket = io(SOCKET_URL);
+    private _socket: Socket | null = null;
+
+    private get socket(): Socket {
+        if (!this._socket) {
+            this._socket = io(getBaseUrl());
+        }
+        return this._socket;
+    }
 
     joinRoom(roomId: string) {
         this.socket.emit('join-room', roomId);
