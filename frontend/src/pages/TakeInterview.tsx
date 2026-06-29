@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Loader2, Send, ChevronLeft, CheckCircle, BrainCircuit } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AppLayout } from '../components/AppLayout';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const TakeInterview: React.FC = () => {
   const { id } = useParams<{ id: string }>();

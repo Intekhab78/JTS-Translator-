@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Shield, Users, Mail, Calendar, LogOut, ArrowLeft, Loader, CheckCircle, XCircle, FileText, Download, Plus, Briefcase, BrainCircuit, Search } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Shield, Users, Calendar, LogOut, ArrowLeft, Loader, CheckCircle, XCircle, FileText, Download, Plus, Briefcase, BrainCircuit, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 interface UserData {

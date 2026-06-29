@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Check, Star, ArrowLeft, Loader, Zap, Shield, MessageSquare, Globe } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Check, Star, ArrowLeft, Loader, Zap, Shield, MessageSquare } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';

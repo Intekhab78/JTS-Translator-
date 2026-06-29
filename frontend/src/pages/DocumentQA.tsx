@@ -1,13 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
 import { AskQuestionPanel } from '../components/AskQuestionPanel';
-import { PlanGuard } from '../components/PlanGuard';
 import { AppLayout } from '../components/AppLayout';
 
 export const DocumentQA: React.FC = () => {
-  const { user } = useAuth();
   const navigate = useNavigate();
 
   return (

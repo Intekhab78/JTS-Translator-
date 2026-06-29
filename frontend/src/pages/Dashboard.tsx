@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mic, MicOff, Send, Globe, Shield, Zap, Download, Share2, MessageSquare, Plus, X } from 'lucide-react';
+import { Mic, MicOff, Send, Globe, Shield, Download, Share2, MessageSquare, Plus, X } from 'lucide-react';
 import { Waveform } from '../components/Waveform';
 import { useAudioRecorder } from '../hooks/useAudioRecorder';
 import { socketService } from '../services/socketService';
