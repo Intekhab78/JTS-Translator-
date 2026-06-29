@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
-import { Zap, Mail, Lock, ArrowRight, Loader, Globe } from 'lucide-react';
+import { Mail, Lock, ArrowRight, Loader, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
@@ -192,28 +192,32 @@ export const Login: React.FC = () => {
               </div>
             </form>
 
-            <div className="mt-8 relative flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-slate-800"></div>
-              </div>
-              <div className="relative px-4 bg-transparent text-sm text-slate-500 font-medium">
-                Or continue with
-              </div>
-            </div>
+            {import.meta.env.VITE_GOOGLE_CLIENT_ID && import.meta.env.VITE_GOOGLE_CLIENT_ID !== 'dummy_client_id_for_development' && (
+              <>
+                <div className="mt-8 relative flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-slate-800"></div>
+                  </div>
+                  <div className="relative px-4 bg-transparent text-sm text-slate-500 font-medium">
+                    Or continue with
+                  </div>
+                </div>
 
-            <div className="mt-8 flex justify-center w-full">
-              <div className="w-full flex justify-center [&>div]:w-full [&>div>div]:!w-full drop-shadow-md">
-                <GoogleLogin
-                  onSuccess={handleGoogleSuccess}
-                  onError={handleGoogleError}
-                  useOneTap
-                  theme="outline"
-                  size="large"
-                  shape="rectangular"
-                  width="340"
-                />
-              </div>
-            </div>
+                <div className="mt-8 flex justify-center w-full">
+                  <div className="w-full flex justify-center [&>div]:w-full [&>div>div]:!w-full drop-shadow-md">
+                    <GoogleLogin
+                      onSuccess={handleGoogleSuccess}
+                      onError={handleGoogleError}
+                      useOneTap
+                      theme="outline"
+                      size="large"
+                      shape="rectangular"
+                      width="340"
+                    />
+                  </div>
+                </div>
+              </>
+            )}
             
             <div className="mt-8 text-center text-slate-400 font-medium border-t border-white/5 pt-6">
               Don't have an account?{' '}

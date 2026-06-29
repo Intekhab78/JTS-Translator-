@@ -3,7 +3,11 @@ const fs = require('fs');
 
 class STTService {
     constructor() {
-        this.deepgram = createClient(process.env.DEEPGRAM_API_KEY);
+        if (process.env.DEEPGRAM_API_KEY) {
+            this.deepgram = createClient(process.env.DEEPGRAM_API_KEY);
+        } else {
+            this.deepgram = null;
+        }
     }
 
     async startStreaming(sourceLang, onTranscript) {
